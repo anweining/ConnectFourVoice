@@ -21,9 +21,9 @@ window.onload = function() {
   tiles.set("india", "0-5");
   tiles.set("russia", "0-6");
 
-  var speechRecognition = window.webkitSpeechRecognition;
+  const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-  var recognition = new speechRecognition();
+  let recognition = new speechRecognition();
 
   var content = "";
 
@@ -35,14 +35,17 @@ window.onload = function() {
 
   recognition.onstart = function () {
     //instructions.text("Voice Recognition is on");
+    //console.log("First");
   }
 
   recognition.onspeechend = function () {
+    //console.log("Third");
     //instructions.text("No Activity");
     //recognition.start();
   }
 
   recognition.onend = function () {
+    //console.log("Fourth");
     //if (gameOver != true) {
     recognition.start();
     //}
@@ -53,19 +56,29 @@ window.onload = function() {
   }
 
   recognition.onresult = function (event) {
+    //console.log("Second");
     var current = event.resultIndex;
 
     var transcript = event.results[current][0].transcript;
 
-    if (event.resultIndex === 0) {
+    content = transcript.toLowerCase();
+    
+    if (content.length > 2) {
+        content = content.substring(0, content.length-1);
+    }
+
+    /*
+    if (event.resultIndex == 0) {
       content = transcript.toLowerCase();
     }
 
     else {
-      content = transcript.toLowerCase().slice(1);
+      content = transcript.toLowerCase().slice(0);
     }
+    */
 
     //content = transcript.toLowerCase();
+    console.log(content);
 
     if (tiles.has(content)) {
       setPiece(tiles.get(content));
