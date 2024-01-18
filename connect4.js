@@ -21,7 +21,7 @@ window.onload = function() {
   tiles.set("india", "0-5");
   tiles.set("russia", "0-6");
 
-  const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const speechRecognition = window.webkitSpeechRecognition;
 
   let recognition = new speechRecognition();
 
