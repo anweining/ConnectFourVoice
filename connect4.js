@@ -62,8 +62,9 @@ window.onload = function() {
     var transcript = event.results[current][0].transcript;
 
     content = transcript.toLowerCase();
+    let lastChar = content[content.length-1]
     console.log(content);
-    if (content.length > 2) {
+    if ((content.length > 2) && ('.' == lastChar)) {
         content = content.substring(0, content.length-1);
     }
 
