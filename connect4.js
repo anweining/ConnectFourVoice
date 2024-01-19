@@ -67,7 +67,9 @@ window.onload = function() {
     if ((content.length > 2) && ('.' == lastChar)) {
         content = content.substring(0, content.length-1);
     }
-
+    if ((content.length > 2) && (' ' == content.charAt(0))) {
+        content = content.substring(1, content.length);
+    }
     /*
     if (event.resultIndex == 0) {
       content = transcript.toLowerCase();
