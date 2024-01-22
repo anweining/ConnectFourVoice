@@ -1,34 +1,51 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 #board {
-    height: 540px;
-    width: 630px;
-    background-color: blue;
-    border: 10px solid navy;
+  /*height: 540px;
+    width: 630px;*/
+  /*height: 54vh;
+    width: 63vw;*/
+    border-radius: 25px;
+    background-color: deepskyblue;
+    border: 10px solid indigo;
 
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+  /*margin: 0 auto;*/
+  /*display: flex;*/
+  display: grid;
+  grid-template-columns: repeat(7, 13vw);
+  grid-template-rows: repeat(6, 15%);
+  gap: 0.35vw;
+  /*flex-wrap: wrap;*/
+  /*flex-wrap: nowrap;*/
 }
 
 .tile {
-    height: 70px;
-    width: 70px;
-    margin: 5px;
-
-    /* Circle */
-    background-color: white;
-    border-radius: 50%;
-    border: 5px solid navy;
+  /*height: 70px;
+    width: 70px;*/
+  height: 6vw;
+  width: 6vw;
+  /*margin: 5px;*/
+  /*margin: 1vh auto;*/
+  margin: 0 auto;
+  /* Circle */
+  background-color: white;
+  border-radius: 50%;
+  border: 5px solid darkcyan;
 }
 
 .red-piece {
-    background-color: red;
+  background-color: red;
 }
 
 .yellow-piece {
-    background-color: yellow;
+  background-color: yellow;
+}
+
+#title {
+    font-family: "Lucida Console", "Courier New", fantasy;
+    font-size: 60px;
+    color: green;
 }
